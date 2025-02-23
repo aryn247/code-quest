@@ -1,0 +1,132 @@
+body { 
+  font-family: 'Courier New', monospace; 
+  text-align: center; 
+  background-color: black; 
+  color: limegreen; 
+  transition: background-color 0.5s, color 0.5s; 
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin: 20px 0;
+  font-size: 1.8em; /* Adjust for smaller screens */
+}
+
+#terminal { 
+  font-size: 18px; 
+  border: 1px solid limegreen; 
+  padding: 10px; 
+  min-height: 200px; 
+  max-height: 400px; 
+  overflow-y: auto; 
+  text-align: left; 
+  word-wrap: break-word;
+  margin: 0 auto;
+  width: 90%;  /* Make it more responsive */
+  max-width: 600px;
+}
+
+input, button {
+  width: 100%; 
+  padding: 12px; /* Increase touch area */
+  margin-top: 10px; 
+  background: black; 
+  color: limegreen; 
+  border: 1px solid limegreen; 
+  font-size: 16px; 
+  box-sizing: border-box;
+  border-radius: 5px; /* Smooth edges */
+}
+
+button:disabled {
+  color: grey;
+  border: 1px solid grey;
+  cursor: not-allowed;
+}
+
+.success { color: limegreen; }
+.error { color: red; }
+.info { color: cyan; }
+.hidden { display: none; }
+.fade-in { animation: fadeIn 1s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#score, #timer, #leaderboard, #level, #achievements, #themeSwitcher {
+  margin-top: 10px;
+  font-size: 18px;
+  max-width: 600px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+#tutorial {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: left;
+  background: #222;
+  padding: 10px;
+  border: 1px solid limegreen;
+  border-radius: 5px;
+  display: none;
+  max-width: 90%;
+  margin: 20px auto;
+}
+
+/* 🌟 Mobile-Friendly Adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em; /* Reduce heading size */
+  }
+
+  #terminal {
+    font-size: 16px;
+    min-height: 150px;
+    max-height: 300px;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #score, #timer, #leaderboard, #level, #achievements, #themeSwitcher {
+    font-size: 16px;
+  }
+
+  #tutorial {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3em;
+  }
+
+  #terminal {
+    font-size: 14px;
+  }
+
+  input, button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: limegreen;
+  opacity: 0.8;
+}
