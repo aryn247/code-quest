@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeLearn: Coding Challenges</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CodeLearn: Coding Challenges</h1>
+    <div id="terminal" class="fade-in" aria-live="polite">Welcome, Coder. Type 'start' to begin... or 'tutorial' for a quick guide.</div>
+    <input type="text" id="userInput" placeholder="Enter command..." onkeypress="handleKeyPress(event)" aria-label="User Input">
+    <button id="skipButton" onclick="skipChallenge()">Skip Challenge (3)</button>
+    <div id="score">Score: 0</div>
+    <div id="timer">Time: 0s</div>
+    <div id="level">Level: 1</div>
+    <div id="achievements">Achievements: None</div>
+    <div id="leaderboard">Leaderboard:<br>1. N/A - 0 points<br>2. N/A - 0 points<br>3. N/A - 0 points</div>
+    <div id="themeSwitcher">Theme: <button onclick="switchTheme()">Switch to Light Theme</button></div>
+    <div id="tutorial">
+        <h2>Tutorial</h2>
+        <p>Welcome to CodeLearn! In this platform, you'll face various coding challenges that help you learn basic programming concepts. Here's how to play:</p>
+        <ul>
+            <li><strong>Commands:</strong> Type commands in the input box and press Enter.</li>
+            <li><strong>Start:</strong> Type 'start' to begin the challenges.</li>
+            <li><strong>Hints:</strong> If you're stuck, type 'hint' to get a clue (costs points).</li>
+            <li><strong>Skip:</strong> You can skip up to 3 challenges by clicking the 'Skip Challenge' button (costs points).</li>
+            <li><strong>Restart:</strong> Type 'restart' to start over.</li>
+        </ul>
+        <p>Good luck, Coder!</p>
+        <button onclick="closeTutorial()">Close Tutorial</button>
+    </div>
+
+    
+    
+
+    <script src="questionGenerator.js"></script>
+    <script src="script.js"></script>
+
+    <footer>
+        &copy; 2025 Aryan
+      </footer>
+      
+</body>
+</html>
