@@ -3,43 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeLearn: Coding Challenges</title>
+    <title>CodeLearn: Enhanced Coding Challenges</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>CodeLearn: Coding Challenges</h1>
-    <div id="terminal" class="fade-in" aria-live="polite">Welcome, Coder. Type 'start' to begin... or 'tutorial' for a quick guide.</div>
-    <input type="text" id="userInput" placeholder="Enter command..." onkeypress="handleKeyPress(event)" aria-label="User Input">
-    <button id="skipButton" onclick="skipChallenge()">Skip Challenge (3)</button>
-    <div id="score">Score: 0</div>
-    <div id="timer">Time: 0s</div>
-    <div id="level">Level: 1</div>
-    <div id="achievements">Achievements: None</div>
-    <div id="leaderboard">Leaderboard:<br>1. N/A - 0 points<br>2. N/A - 0 points<br>3. N/A - 0 points</div>
-    <div id="themeSwitcher">Theme: <button onclick="switchTheme()">Switch to Light Theme</button></div>
-    <div id="tutorial">
-        <h2>Tutorial</h2>
-        <p>Welcome to CodeLearn! In this platform, you'll face various coding challenges that help you learn basic programming concepts. Here's how to play:</p>
-        <ul>
-            <li><strong>Commands:</strong> Type commands in the input box and press Enter.</li>
-            <li><strong>Start:</strong> Type 'start' to begin the challenges.</li>
-            <li><strong>Hints:</strong> If you're stuck, type 'hint' to get a clue (costs points).</li>
-            <li><strong>Skip:</strong> You can skip up to 3 challenges by clicking the 'Skip Challenge' button (costs points).</li>
-            <li><strong>Restart:</strong> Type 'restart' to start over.</li>
-        </ul>
-        <p>Good luck, Coder!</p>
-        <button onclick="closeTutorial()">Close Tutorial</button>
-    </div>
+    <header class="game-header">
+        <h1>CodeLearn: Enhanced Challenges</h1>
+        <div class="stats-container">
+            <div id="score">Score: 0</div>
+            <div id="timer">Time: 0s</div>
+            <div id="level">Level: 1</div>
+            <div id="skips">Skips: 3</div>
+        </div>
+    </header>
 
-    
-    
+    <main class="game-container">
+        <section id="terminal" class="fade-in" aria-live="polite">
+            Welcome, Coder. Type 'start' to begin... or 'tutorial' for a quick guide.
+        </section>
 
-    <script src="questionGenerator.js"></script>
-    <script src="script.js"></script>
+        <section class="controls-container">
+            <div class="input-group">
+                <input type="text" id="userInput" placeholder="Enter command..." 
+                       aria-label="Command input" class="cyber-input">
+                <div class="button-group">
+                    <button class="cyber-button" data-action="start">Start</button>
+                    <button class="cyber-button" data-action="toggleTutorial">Tutorial</button>
+                    <button class="cyber-button" data-action="submit">Submit</button>
+                    <button class="cyber-button" data-action="skip" id="skipButton">Skip (3)</button>
+                    <button class="cyber-button" data-action="reset">Reset</button>
+                </div>
+            </div>
 
-    <footer>
-        &copy; 2025 Aryan
-      </footer>
-      
+            <div id="tutorial" style="display: none;">
+                <h2>Tutorial</h2>
+                <p>Welcome to CodeLearn! Solve coding challenges and level up.</p>
+                <ul>
+                    <li><strong>Commands:</strong> Type commands and press Enter.</li>
+                    <li><strong>Start:</strong> Click 'Start' to begin.</li>
+                    <li><strong>Hints:</strong> Type 'Hint' if you're stuck (-10 points).</li>
+                    <li><strong>Skip:</strong> Skip up to 3 challenges (-20 points each).</li>
+                    <li><strong>Answer Format:</strong> Example - function_name(args)</li>
+                </ul>
+                <p>Good luck, Coder!</p>
+                <button onclick="closeTutorial()">Close Tutorial</button>
+            </div>
+
+            <div class="category-selector">
+                <select id="category" class="cyber-select">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                </select>
+                <button id="generate-btn" class="cyber-button">Generate Challenge</button>
+            </div>
+        </section>
+
+        <section id="challengeSection" class="hidden">
+            <!-- Challenge content will be injected here -->
+        </section>
+    </main>
+
+    <footer class="cyber-footer">
+        &copy; 2025 CodeLearn v2.0
+    </footer>
+
+    <script src="script.js" type="module"></script>
 </body>
 </html>
